@@ -1,32 +1,29 @@
 import React from 'react';
 import './App.css';
+import {connect} from 'react-redux';
+import {incrementValue, decrementValue} from './Redux/action.js';
 
 class App extends React.Component{
-  constructor(props){
-      super(props);
-      this.state = {
-          count: 0
-      }
-  }
-
-  degistir = (operation) => {
-      this.setState({
-          count: operation === "azalt" ? this.state.count - 1 : this.state.count +1
-      })
-  }
 
   render(){
-      const {count} = this.state;
+      const {count, incrementValue, decrementValue} = this.props;
       return <div>
           <h1>{count}</h1>
-          <button onClick={() => {this.degistir("azalt")}}>
+          <button onClick={decrementValue}>
               -
           </button>
-          <button onClick={() => {this.degistir("artir")}}>
+          <button onClick={incrementValue}>
               +
           </button>
       </div>
-  }
+      
+    }
 }
+const mapStateToProps = (state) => {return state};
+const mapDispatchToProps = {
+      incrementValue,
+      decrementValue,
+};
 
-export default App;
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
