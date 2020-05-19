@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Please visit https://mahmuttyildiz.github.io/example-counter/ for review
+
 ## Available Scripts
 
 In the project directory, you can run:
