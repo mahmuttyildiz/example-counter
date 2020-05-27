@@ -1,29 +1,26 @@
 import React from 'react';
 import './App.css';
-import {connect} from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import {incrementValue, decrementValue} from './Redux/action.js';
 
-class App extends React.Component{
+function App() {
+    const count = useSelector(state => state.count);
+    const dispatch = useDispatch();
 
-  render(){
-      const {count, incrementValue, decrementValue} = this.props;
-      return <div>
+  return (
+      <>
+      <div>
           <h1>{count}</h1>
-          <button onClick={decrementValue}>
+          <button onClick={() => dispatch(decrementValue())}>
               -
           </button>
-          <button onClick={incrementValue}>
+          <button onClick={() => dispatch(incrementValue())}>
               +
           </button>
       </div>
-      
-    }
+      </>
+  )
 }
-const mapStateToProps = (state) => {return state};
-const mapDispatchToProps = {
-      incrementValue,
-      decrementValue,
-};
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
