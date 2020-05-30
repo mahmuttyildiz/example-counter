@@ -1,2 +1,0 @@
-body{margin:0;padding:0;height:100vh;background:linear-gradient(90deg,#4776e6,#8e54e9);display:flex;align-items:center;justify-content:center}h1{text-align:center;font-size:6rem}button,h1{color:hsla(0,0%,100%,.8)}button{background:hsla(0,0%,100%,.3);font-size:3rem;min-width:100px;min-height:100px;margin:10px;border:4px solid hsla(0,0%,100%,.8);border-radius:10px;transition:.2s;cursor:pointer}button:hover{background:hsla(0,0%,100%,.6)}
-/*# sourceMappingURL=main.57cd9b39.chunk.css.map */
